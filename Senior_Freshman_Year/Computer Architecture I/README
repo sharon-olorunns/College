@@ -1,0 +1,3 @@
+The aims of the module are to learn register-transfer specification and design and learn the fundamentals of an instruction processor.
+The lectures and tutorials examine the detailed design and organisation of an instruction processor. Coursework consists of two design projects and students use VHDL and ModelSim to simulate and test their designs. The first project involves the design of a processor unit (ALU + shifter + fast registers) and the second project involves the design of an instruction processor.
+Topics studied include digital logic, register transfer definitions, micro-operations, bus transfers, ALU design, shifter design, hardwired control design, microprogrammed processor control and the design of an instruction processor.
