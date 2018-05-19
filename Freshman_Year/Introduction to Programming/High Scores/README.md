@@ -1,0 +1,1 @@
+Write a program to maintain a list of the high scores obtained in a game.  The program should first ask the user how many scores they want to maintain and then repeatedly accept new scores from the user and should add the score to the list of high scores (in the appropriate position) if it is higher than any of the existing high scores.
