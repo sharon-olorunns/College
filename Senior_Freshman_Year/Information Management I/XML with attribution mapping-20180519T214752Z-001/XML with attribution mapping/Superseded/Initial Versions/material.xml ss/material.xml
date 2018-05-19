@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Start DOC TYPE DECLARATION-->
+<!DOCTYPE materials [
+<!ELEMENT materials (material*)>
+<!ATTLIST material id CDATA #REQUIRED>
+<!ENTITY BOOK "BOOK">
+<!ENTITY NEWSPAPER "NEWSPAPER">
+<!ENTITY MAP "MAP">
+<!ENTITY JOURNAL "JOURNAL">
+<!ENTITY MUSIC "MUSIC">
+<!ENTITY MANUSCRIPT "MANUSCRIPT">
+<!ATTLIST material type  (BOOK | NEWSPAPER | MAP | JOURNAL | MANUSCRIPT | MUSIC ) #REQUIRED>
+
+<!ENTITY IN_USE "IN_USE">
+<!ENTITY RETURNED "RETURNED">
+
+<!ELEMENT material (material.itemName,material.description,material.addInformation, material.permissionLevel, material.itemSource,material.itemAvailable,material.orderHistory*,map?,newspaper?,book?, journal?, newspaper?,manuscript?,musicalscore?)>
+<!ELEMENT material.itemName   (#PCDATA)>
+<!ELEMENT material.description   (#PCDATA)>
+<!ELEMENT material.addInformation  (#PCDATA)>
+<!ELEMENT material.permissionLevel  (#PCDATA)>	
+<!ELEMENT material.itemSource  (#PCDATA)>	
+<!ELEMENT material.itemAvailable  (#PCDATA)>	
+<!ELEMENT material.orderHistory  (material.orderHistory.order*)>	
+<!ATTLIST material.orderHistory.order id CDATA #REQUIRED>
+<!ELEMENT material.orderHistory.order (#PCDATA | IN_USE | RETURNED)*>
+
+<!--close the DOCTYPE declaration-->
+
+<!--Map-->
+<!ELEMENT map  (map.mapArea,map.originDate,map.cartographer,map.organisation)>
+<!ELEMENT map.mapArea  (#PCDATA)>	
+<!ELEMENT map.cartographer  (#PCDATA)>	
+<!ELEMENT map.originDate  (#PCDATA)>
+<!ELEMENT map.organisation  (#PCDATA)>
+
+<!--Newspaper-->
+<!ELEMENT newspaper (newspaper.dateOfPublication,newspaper.paperEdition,newspaper.editor,newspaper.publisher,newspaper.title)>
+<!ELEMENT newspaper.dateOfPublication  (#PCDATA)>	
+<!ELEMENT newspaper.paperEdition  (#PCDATA)>	
+<!ELEMENT newspaper.editor  (#PCDATA)>	
+<!ELEMENT newspaper.publisher  (#PCDATA)>
+<!ELEMENT newspaper.title  (#PCDATA)>
+
+<!--Book-->
+<!ATTLIST book ISBN CDATA #REQUIRED>
+<!ELEMENT book  (book.author,book.title,book.genre)>
+<!ELEMENT book.author  (#PCDATA)>
+<!ELEMENT book.title  (#PCDATA)>
+<!ELEMENT book.genre  (#PCDATA)>
+
+
+<!--Journal-->
+<!ELEMENT journal  (journal.title,journal.volume,journal.editor,journal.article*,journal.dateOfPublication)>
+<!ELEMENT journal.title  (#PCDATA)>
+<!ELEMENT journal.volume  (#PCDATA)>
+<!ELEMENT journal.editor  (#PCDATA)>
+<!ELEMENT journal.article  (#PCDATA)>
+<!ELEMENT journal.dateOfPublication  (#PCDATA)>
+
+<!--Manuscript-->
+<!ELEMENT manuscript  (manuscript.origin,manuscript.status,manuscript.title)>
+<!ELEMENT manuscript.origin  (#PCDATA)>
+<!ELEMENT manuscript.title  (#PCDATA)>
+<!ELEMENT manuscript.status  (#PCDATA)>
+
+<!--Musical Score-->
+<!ELEMENT musicalscore  (musicalscore.composer,musicalscore.title,musicalscore.organisation,musicalscore.compositionDate)>
+<!ELEMENT musicalscore.composer  (#PCDATA)>
+<!ELEMENT musicalscore.title  (#PCDATA)>
+<!ELEMENT musicalscore.organisation  (#PCDATA)>
+<!ELEMENT musicalscore.compositionDate  (#PCDATA)>
+
+]>
+
+<materials>
+	<material id="002" type ="&BOOK;">
+		<material.itemName>"Colman's Book"</material.itemName>
+		<material.description>"A Book By Colman"</material.description>
+		<material.addInformation>"Somewhere in a galaxy far far away"</material.addInformation>
+		<material.permissionLevel>1</material.permissionLevel>
+		<material.itemSource>"Donation by the Kinanes"</material.itemSource>
+		<material.itemAvailable>"true"</material.itemAvailable>
+		<material.orderHistory>
+			<material.orderHistory.order id="001">&IN_USE;</material.orderHistory.order>
+			<material.orderHistory.order id="002">&RETURNED;</material.orderHistory.order>
+		</material.orderHistory>
+		<book ISBN ="9928957895752">
+			<book.author>"Colman Kinane"</book.author>
+			<book.title>"The Adventures of Colman : The last Dorito Lover"</book.title>
+			<book.genre>"Horror"</book.genre>
+		</book>
+	</material>
+	
+	<material id="003" type ="&BOOK;">
+		<material.itemName>"Book A"</material.itemName>
+		<material.description>"Magic Mike"</material.description>
+		<material.addInformation>"Some Desc"</material.addInformation>
+		<material.permissionLevel>1</material.permissionLevel>
+		<material.itemSource>"Donation"</material.itemSource>
+		<material.itemAvailable>"true"</material.itemAvailable>
+		<book ISBN ="992895785225252">
+			<book.author>"Author A"</book.author>
+			<book.title>"Book A, The Tale of A"</book.title>
+			<book.genre>"Fiction"</book.genre>
+		</book>
+	</material>
+	
+	<material id="004" type ="&MAP;">
+		<material.itemName>"Map Of Ireland"</material.itemName>
+		<material.description>"Big Map of Ireland"</material.description>
+		<material.addInformation>"Some Info"</material.addInformation>
+		<material.permissionLevel>1</material.permissionLevel>
+		<material.itemSource>"Donation"</material.itemSource>
+		<material.itemAvailable>"true"</material.itemAvailable>
+		<map>
+			<map.mapArea>"Ireland"</map.mapArea>
+			<map.originDate>"11/1/2008"</map.originDate>
+			<map.cartographer>"Philip Hughes"</map.cartographer>
+			<map.organisation>"Ordance Survey Society of Ireland"</map.organisation>
+		</map>
+		
+	</material>
+	
+	<material id="005" type ="&JOURNAL;">
+		<material.itemName>"Harvard Medical Journal Spring '17"</material.itemName>
+		<material.description>"Harvard Medical Journal"</material.description>
+		<material.addInformation>"Legal Deposit"</material.addInformation>
+		<material.permissionLevel>1</material.permissionLevel>
+		<material.itemSource>"Donation"</material.itemSource>
+		<material.itemAvailable>"true"</material.itemAvailable>
+		<journal>
+			<journal.title>"Harvard Medical Journal"</journal.title>
+			<journal.volume>"Spring 2017"</journal.volume>
+			<journal.editor>"Sir John Fox"</journal.editor>
+			<journal.dateOfPublication>"11/11/1997"</journal.dateOfPublication>
+		</journal>
+	</material>
+	
+	<material id="006" type ="&MUSIC;">
+		<material.itemName>"Mozart's 5th"</material.itemName>
+		<material.description>"5th Symphony"</material.description>
+		<material.addInformation>"N/A"</material.addInformation>
+		<material.permissionLevel>1</material.permissionLevel>
+		<material.itemSource>"Donation"</material.itemSource>
+		<material.itemAvailable>"true"</material.itemAvailable>
+		<musicalscore>
+			<musicalscore.composer>"Mozart"</musicalscore.composer>
+			<musicalscore.title>"5th Symphony"</musicalscore.title>
+			<musicalscore.organisation>"Not Affiliated"</musicalscore.organisation>
+			<musicalscore.compositionDate>1770</musicalscore.compositionDate>
+		</musicalscore>
+	</material>
+
+	<material id="007" type ="&NEWSPAPER;">
+		<material.itemName>"The Irish Times"</material.itemName>
+		<material.description>"Ireland's National Newspaper"</material.description>
+		<material.addInformation>"Price 2 Euro"</material.addInformation>
+		<material.permissionLevel>1</material.permissionLevel>
+		<material.itemSource>"Legal Deposit"</material.itemSource>
+		<material.itemAvailable>"true"</material.itemAvailable>
+		<newspaper>
+			<newspaper.dateOfPublication>"10/7/2008"</newspaper.dateOfPublication>
+			<newspaper.paperEdition>"Morning"</newspaper.paperEdition>
+			<newspaper.editor>"Martin Richards"</newspaper.editor>
+			<newspaper.publisher>"The Irish Times Corp"</newspaper.publisher>
+			<newspaper.title>"Ireland The Happiest Country in the World"</newspaper.title>
+		</newspaper>
+	</material>
+	<material id="008" type ="&NEWSPAPER;">
+		<material.itemName>"The Script of Eldor"</material.itemName>
+		<material.description>"The Most ancient script in the world"</material.description>
+		<material.addInformation>"Price 2 Euro"</material.addInformation>
+		<material.permissionLevel>1</material.permissionLevel>
+		<material.itemSource>"Donation"</material.itemSource>
+		<material.itemAvailable>"true"</material.itemAvailable>
+		<manuscript>
+			<manuscript.origin>"Someone in the Arabian Desert"</manuscript.origin>
+			<manuscript.status>"Poor Condition"</manuscript.status>
+			<manuscript.title>"Eldors Script"</manuscript.title>
+		</manuscript>
+	</material>
+	
+</materials>

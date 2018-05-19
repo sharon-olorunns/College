@@ -1,0 +1,66 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE materialOrders [
+<!ELEMENT materialOrders (materialOrder+)>
+<!--the use of the id attribute allows us to refer to a particular material order easily outside this xml class-->
+<!ATTLIST materialOrder id CDATA #REQUIRED>
+<!--the material order elements allow us to get all the details for the order such as who ordered it and what was ordered as well as the time the order was filled and where it is to be delivered. Ther eis an option for order notes of which there can be more than one or none-->
+<!ELEMENT materialOrder (materialOrder.requestID, materialOrder.MaterialID, materialOrder.orderNotes*, materialOrder.assignedTo, materialOrder.fillTime, materialOrder.orderExpiryTime, materialOrder.location)>
+<!--the orderID allows us to refer to an order very easily outside this xml class-->
+<!ELEMENT materialOrder.orderID (#PCDATA)>
+<!ELEMENT materialOrder.bookingRef (#PCDATA)>
+<!ELEMENT materialOrder.orderNotes (#PCDATA)>
+<!ELEMENT materialOrder.assignedTo (#PCDATA)>
+<!ELEMENT materialOrder.fillTime (#PCDATA)>
+<!ATTLIST materialOrder.fillTime zone CDATA #REQUIRED>
+<!ELEMENT materialOrder.orderExpiryTime (#PCDATA)>
+<!ATTLIST materialOrder.orderExpiryTime zone CDATA #REQUIRED>
+<!ELEMENT materialOrder.location (#PCDATA)>
+<!ATTLIST materialOrder.location id CDATA #REQUIRED>
+]>
+
+<materialOrders>
+    <materialOrder id="001">
+        <materialOrder.requestID>002</materialOrder.requestID>
+        <materialOrder.MaterialID>002</materialOrder.MaterialID>
+        <materialOrder.orderNotes>Have ready at desk</materialOrder.orderNotes>
+		<!--specifically asked to give material to eileen-->
+        <materialOrder.assignedTo>Eileen</materialOrder.assignedTo>
+		<!--eileen is the specific libraran to which the book is to be given as specified in the order-->
+        <materialOrder.fillTime zone="UTC +0">15:00 2017-12-05</materialOrder.fillTime>
+        <materialOrder.orderExpiryTime zone="UTC +0">15:00 2017-12-12</materialOrder.orderExpiryTime>
+        <materialOrder.location id="003">Reading room 3</materialOrder.location>
+    </materialOrder>
+	
+	<materialOrder id="002">
+        <materialOrder.requestID>003</materialOrder.requestID>
+        <materialOrder.MaterialID>003</materialOrder.MaterialID>
+        <materialOrder.orderNotes>Deleiver with order id 001</materialOrder.orderNotes>
+		<!--specifically asked to give material to eileen-->
+        <materialOrder.assignedTo>Gwyneth</materialOrder.assignedTo>
+		<!--eileen is the specific libraran to which the book is to be given as specified in the order-->
+        <materialOrder.fillTime zone="UTC +0">2017-12-07</materialOrder.fillTime>
+        <materialOrder.orderExpiryTime zone="UTC +0">2017-12-14</materialOrder.orderExpiryTime>
+        <materialOrder.location id="001">Reading room 1</materialOrder.location>
+    </materialOrder>
+    
+    <materialOrder id="003">
+        <materialOrder.requestID>004</materialOrder.requestID>
+        <materialOrder.MaterialID>010</materialOrder.MaterialID>
+        <materialOrder.orderNotes>Deleiver with order id 002</materialOrder.orderNotes>
+        <materialOrder.assignedTo>Gwyneth</materialOrder.assignedTo>
+        <materialOrder.fillTime zone="UTC +0">2017-12-07</materialOrder.fillTime>
+        <materialOrder.orderExpiryTime zone="UTC +0">2017-12-14</materialOrder.orderExpiryTime>
+        <materialOrder.location id="001">Reading room 1</materialOrder.location>
+    </materialOrder>
+    
+    <materialOrder id="004">
+        <materialOrder.requestID>004</materialOrder.requestID>
+        <materialOrder.MaterialID>010</materialOrder.MaterialID>
+        <materialOrder.orderNotes>Deleiver with order id 002</materialOrder.orderNotes>
+        <materialOrder.assignedTo>Gwyneth</materialOrder.assignedTo>
+        <materialOrder.fillTime zone="UTC +0">2017-12-07</materialOrder.fillTime>
+        <materialOrder.orderExpiryTime zone="UTC +0">2017-12-14</materialOrder.orderExpiryTime>
+        <materialOrder.location id="001">Reading room 1</materialOrder.location>
+    </materialOrder>
+</materialOrders>
+

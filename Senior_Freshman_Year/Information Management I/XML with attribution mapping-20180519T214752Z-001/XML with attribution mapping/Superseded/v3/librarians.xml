@@ -1,0 +1,40 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE librarians [
+<!ELEMENT librarians (librarian+)>
+<!ATTLIST librarian id CDATA #REQUIRED>
+<!ELEMENT librarian (librarian.name, librarian.phoneNo+, librarian.address, librarian.dateOfBirth,librarian.startDate,librarian.PPSNumber)>
+<!ENTITY mr "MR">
+<!ENTITY ms "MS">
+<!ELEMENT librarian.name (#PCDATA)>
+<!ATTLIST librarian.name title ( MR |MS) #REQUIRED>
+<!ELEMENT librarian.phoneNo (#PCDATA)>
+<!ATTLIST librarian.phoneNo type CDATA #REQUIRED>
+<!ELEMENT librarian.address (#PCDATA)>
+<!ELEMENT librarian.dateOfBirth (#PCDATA)>
+<!ELEMENT librarian.startDate (#PCDATA)>
+<!ELEMENT librarian.PPSNumber (#PCDATA)>
+<!ATTLIST librarian.PPSNumber verified CDATA #REQUIRED>
+
+]>
+
+<librarians>
+    <librarian id="001">
+       <librarian.name title="&ms;">Eileen Foley</librarian.name>
+	   <librarian.phoneNo type ="Mobile">0871234567</librarian.phoneNo>
+	   <librarian.phoneNo type ="Home">01476308925</librarian.phoneNo>
+	   <librarian.address>17 yellow lane, rathfarnham, Dublin</librarian.address>
+	   <librarian.dateOfBirth>07/12/1950</librarian.dateOfBirth>
+	   <librarian.startDate>1/1/2000</librarian.startDate>
+	   <librarian.PPSNumber verified="true">738614794T</librarian.PPSNumber>
+	</librarian>
+	
+	<librarian id="002" >
+       <librarian.name title="&ms;">Gwyneth Richardson</librarian.name>
+	   <librarian.phoneNo type="Mobile">0877654321</librarian.phoneNo>
+	   <librarian.address>the Nook, Bray, Co. Wicklow</librarian.address>
+	   <librarian.dateOfBirth>19/07/1958</librarian.dateOfBirth>
+	   <librarian.startDate>2/10/2014</librarian.startDate>
+	   <librarian.PPSNumber verified="true">279254794P</librarian.PPSNumber>
+	</librarian>
+</librarians>
+

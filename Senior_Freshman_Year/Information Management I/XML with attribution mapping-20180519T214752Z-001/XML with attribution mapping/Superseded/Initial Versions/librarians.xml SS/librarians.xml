@@ -1,0 +1,28 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE Librarians [
+<!ELEMENT librarians (librarian+)>
+<!ATTLIST librarian id CDATA #REQUIRED>
+<!ELEMENT librarian (librarian.name, librarian.phoneNo, librarian.address, librarian.dateOfBirth*)>
+<!ELEMENT librarian.name (#PCDATA)>
+<!ELEMENT librarian.phoneNo (#PCDATA)>
+<!ELEMENT librarian.address (#PCDATA)>
+<!ELEMENT librarian.dateOfBirth (#PCDATA)>
+
+]>
+
+<librarians>
+    <librarian id="001">
+       <librarian.name>Eileen</librarian.name>
+	   <librarian.phoneNo>0871234567</librarian.phoneNo>
+	   <librarian.address>17 yellow lane, rathfarnham, Dublin</librarian.address>
+	   <librarian.dateOfBirth>07/12/1950</librarian.dateOfBirth>
+	</librarian>
+	
+	<librarian id="002">
+       <librarian.name>Gwyneth</librarian.name>
+	   <librarian.phoneNo>0877654321</librarian.phoneNo>
+	   <librarian.address>the Nook, Bray, Co. Wicklow</librarian.address>
+	   <librarian.dateOfBirth>19/07/1958</librarian.dateOfBirth>
+	</librarian>
+</librarians>
+

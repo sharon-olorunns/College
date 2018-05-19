@@ -1,0 +1,33 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE materialRequests [
+<!ELEMENT materialRequests (materialRequest+)>
+<!ATTLIST materialRequest id CDATA #REQUIRED>
+<!ELEMENT materialRequest (materialRequest.material,materialRequest.patron,materialRequest.issueDate,materialRequest.requestNotes,materialRequest.requestDate,materialRequest.requestType)>
+<!ELEMENT materialRequest.material (#PCDATA)>
+<!ATTLIST materialRequest.material id CDATA #REQUIRED>
+<!ELEMENT materialRequest.patron (#PCDATA)>
+<!ATTLIST materialRequest.patron id CDATA #REQUIRED>
+<!ELEMENT materialRequest.issueDate (#PCDATA)>
+<!ELEMENT materialRequest.requestNotes (#PCDATA)>
+<!ELEMENT materialRequest.requestDate (#PCDATA)>
+<!ELEMENT materialRequest.requestType (#PCDATA)>
+]>
+<materialRequests>
+    <materialRequest id = "002">
+        <materialRequest.material id="001">Book of Colman</materialRequest.material>
+        <materialRequest.patron id="002">Jack Donal Collins</materialRequest.patron>
+        <materialRequest.issueDate>06/12/2017</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>06/12/2017</materialRequest.requestDate>
+        <materialRequest.requestType>URGENT</materialRequest.requestType>
+    </materialRequest>
+    
+        <materialRequest id = "003">
+        <materialRequest.material id="002">Book A</materialRequest.material>
+        <materialRequest.patron id="003">Sharon Olorunniwo</materialRequest.patron>
+        <materialRequest.issueDate>06/12/2017</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>06/12/2017</materialRequest.requestDate>
+        <materialRequest.requestType>NORMAL</materialRequest.requestType>
+    </materialRequest>
+</materialRequests>

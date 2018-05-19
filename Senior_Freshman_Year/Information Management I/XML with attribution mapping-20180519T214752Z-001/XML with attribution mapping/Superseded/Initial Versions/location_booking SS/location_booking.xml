@@ -1,0 +1,41 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE locations [
+<!ELEMENT locations (location+)>
+<!ATTLIST location id CDATA #REQUIRED>
+<!ELEMENT location (location.name,location.bookedBy,location.bookedFor,location.bookingTime,location.bookingDate,location.bookingNotes)>
+<!ENTITY reading_room1 "READINGROOM1">
+<!ENTITY reading_room2 "READINGROOM2">
+<!ENTITY reading_room3 "READINGROOM3">
+<!ELEMENT location.name (#PCDATA | readingRoom1 | readingRoom2 | readingRoom3 )*>
+<!ELEMENT location.bookedBy (#PCDATA)>
+<!ATTLIST location.bookedBy id CDATA #REQUIRED>
+<!ELEMENT location.bookedFor (#PCDATA)>
+<!ATTLIST location.bookedFor id CDATA #REQUIRED>
+<!ELEMENT location.bookingTime (#PCDATA)>
+<!ATTLIST location.bookingTime zone CDATA #REQUIRED>
+<!ELEMENT location.bookingDate (#PCDATA)>
+<!ELEMENT location.bookingNotes (#PCDATA)>
+
+
+]>
+
+<locations>
+    <location id="001">
+       <location.name>&reading_room1;</location.name>
+	   <location.bookedBy id="001">Eileen</location.bookedBy>
+	   <location.bookedFor id="001">Colman Kinane</location.bookedFor>
+	   <location.bookingTime zone ="UTC +0">13:00</location.bookingTime>
+	   <location.bookingDate>09/12/2017</location.bookingDate>
+	   <location.bookingNotes>Nothing to Note</location.bookingNotes>
+	</location>
+	
+	<location id="001">
+       <location.name>&reading_room2;</location.name>
+	   <location.bookedBy id="002">Gwyneth</location.bookedBy>
+	   <location.bookedFor id="002">Jack Donal Collins</location.bookedFor>
+	   <location.bookingTime zone ="UTC +0">13:00</location.bookingTime>
+	   <location.bookingDate>09/12/2017</location.bookingDate>
+	    <location.bookingNotes>Nothing to Note</location.bookingNotes>
+	</location>
+</locations>
+

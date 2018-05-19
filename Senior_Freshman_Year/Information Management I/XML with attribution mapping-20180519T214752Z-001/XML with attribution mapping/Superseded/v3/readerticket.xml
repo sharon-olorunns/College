@@ -1,0 +1,65 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE readerTickets [
+<!ELEMENT readerTickets (readerTicket*)>
+<!ATTLIST readerTicket id CDATA #REQUIRED>
+<!ATTLIST readerTicket permLevel CDATA #REQUIRED>
+<!ELEMENT readerTicket (readerTicket.name, readerTicket.dateOfBirth, readerTicket.photographicID, readerTicket.issueDate, readerTicket.expiryDate, readerTicket.address*)>
+
+<!ELEMENT readerTicket.name (readerTicket.firstName,readerTicket.surname)>
+<!ATTLIST readerTicket.name title ( MR | MS ) #REQUIRED>
+<!ENTITY mr "MR">
+<!ENTITY ms "MS">
+<!ELEMENT readerTicket.title ( #PCDATA | mr | ms )*>
+<!ELEMENT readerTicket.firstName (#PCDATA)>
+<!ELEMENT readerTicket.surname (#PCDATA)>
+
+<!ATTLIST readerTicket.dateOfBirth source CDATA #REQUIRED>
+<!ELEMENT readerTicket.dateOfBirth (#PCDATA)>
+<!ELEMENT readerTicket.photographicID (#PCDATA)>
+<!ATTLIST readerTicket.photographicID source CDATA #REQUIRED>
+<!ELEMENT readerTicket.issueDate (#PCDATA)>
+<!ELEMENT readerTicket.expiryDate (#PCDATA)>
+<!ELEMENT readerTicket.address (#PCDATA)>
+<!ATTLIST readerTicket.address source CDATA #REQUIRED>
+
+
+]>
+<readerTickets>
+    <readerTicket id = "001" permLevel="1" >
+        <readerTicket.name title="&mr;">
+			<readerTicket.firstName>Colman</readerTicket.firstName>
+			<readerTicket.surname>Kinane</readerTicket.surname>
+		</readerTicket.name>
+        <readerTicket.dateOfBirth source="passport">19/07/1997</readerTicket.dateOfBirth>
+        <readerTicket.photographicID source="passport">https://someImageAddress.com</readerTicket.photographicID>
+        <readerTicket.issueDate>06/12/2017</readerTicket.issueDate>
+        <readerTicket.expiryDate>06/12/2020</readerTicket.expiryDate>
+        <readerTicket.address source="Utility Bill">15 Carysfort Woods, Blackrock, Co. Dublin</readerTicket.address>
+    </readerTicket>
+    
+    <readerTicket id = "002" permLevel="1">
+        <readerTicket.name title="&mr;">
+			<readerTicket.firstName>Jack Donal</readerTicket.firstName>
+			<readerTicket.surname>Collins</readerTicket.surname>
+		</readerTicket.name>
+        <readerTicket.dateOfBirth source="passport">19/07/1997</readerTicket.dateOfBirth>
+        <readerTicket.photographicID source="passport">https://someImageAddress.com</readerTicket.photographicID>
+        <readerTicket.issueDate>06/12/2017</readerTicket.issueDate>
+        <readerTicket.expiryDate>06/12/2020</readerTicket.expiryDate>
+        <readerTicket.address source="Utility Bill">15 Carysfort Woods, Blackrock, Co. Dublin</readerTicket.address>
+    </readerTicket>
+    
+        <readerTicket id = "002" permLevel="1">
+        <readerTicket.name title="&ms;">
+			<readerTicket.firstName>Sharon</readerTicket.firstName>
+			<readerTicket.surname>Olorunniwo</readerTicket.surname>
+		</readerTicket.name>
+        <readerTicket.dateOfBirth source="passport">19/10/1998</readerTicket.dateOfBirth>
+        <readerTicket.photographicID source="passport">https://someImageAddress.com</readerTicket.photographicID>
+        <readerTicket.issueDate>06/12/2013</readerTicket.issueDate>
+        <readerTicket.expiryDate>06/12/2016</readerTicket.expiryDate>
+        <readerTicket.address source="Utility Bill">Rainbow Road, Rainbow Lane, Dublin</readerTicket.address>
+    </readerTicket>
+ 
+</readerTickets>
+

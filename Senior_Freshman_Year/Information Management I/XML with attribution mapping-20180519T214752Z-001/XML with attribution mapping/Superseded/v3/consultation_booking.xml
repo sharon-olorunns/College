@@ -1,0 +1,49 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE consultationBookings [
+<!ELEMENT consultationBookings (consultationBooking+)>
+<!ATTLIST consultationBooking id CDATA #REQUIRED>
+<!ELEMENT lconsultationBooking (consultationBooking.location, consultationBooking.consultant,  consultationBooking.requester, consultationBooking.material*)>
+<!ELEMENT consultationBooking.location (#PCDATA)>
+<!ATTLIST consultationBooking.location locID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.consultant (#PCDATA)>
+<!ATTLIST consultationBooking.consultant consultantID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.material (#PCDATA)>
+<!ATTLIST consultationBooking.material materialID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.requester (#PCDATA)>
+<!ATTLIST consultationBooking.requester ticketID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.notes (#PCDATA)>
+<!ELEMENT consultationBooking.time (#PCDATA)>
+<!ATTLIST consultationBooking.time zone CDATA #REQUIRED>
+
+]>
+
+<consultationBookings>
+    <consultationBooking id="001">
+       <consultationBooking.location locID="003">Reading Room 3</consultationBooking.location>
+	   <consultationBooking.consultant consultantID="002">Gwyneth</consultationBooking.consultant>
+	   <consultationBooking.requester ticketID="001">Colman Kinane</consultationBooking.requester>
+	   <consultationBooking.material materialID="001">The Book of Colman</consultationBooking.material>
+	   <consulatationBooking.notes>Requires help understanding the text</consulatationBooking.notes>
+	   <consultationBooking.time zone="UTC +0">15:00 December 30</consultationBooking.time>
+	</consultationBooking>
+	
+	<consultationBooking id="002">
+       <consultationBooking.location locID="003">Reading Room 3</consultationBooking.location>
+	   <consultationBooking.consultant consultantID="001">Eileen</consultationBooking.consultant>
+	   <consultationBooking.requester ticketID="002">Jack Donal Collins</consultationBooking.requester>
+	   <consultationBooking.material materialID="002">Book A</consultationBooking.material>
+	   <consulatationBooking.notes>Problem with book text</consulatationBooking.notes>
+	   <consultationBooking.time zone="UTC +0">15:00 December 22</consultationBooking.time>
+	</consultationBooking>
+	
+	    <consultationBooking id="003">
+       <consultationBooking.location locID="003">Reading Room 3</consultationBooking.location>
+	   <consultationBooking.consultant consultantID="002">Gwyneth</consultationBooking.consultant>
+	   <consultationBooking.requester ticketID="003">Sharon Olorunniwo</consultationBooking.requester>
+	   <consultationBooking.material materialID="001">The Book of Colman</consultationBooking.material>
+	   <consulatationBooking.notes>Text dicussion</consulatationBooking.notes>
+	   <consultationBooking.time zone="UTC +0">15:00 December 30</consultationBooking.time>
+	</consultationBooking>
+	
+</consultationBookings>
+

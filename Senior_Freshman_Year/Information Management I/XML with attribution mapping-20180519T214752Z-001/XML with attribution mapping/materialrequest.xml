@@ -1,0 +1,86 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE materialRequests [
+<!ELEMENT materialRequests (materialRequest+)>
+<!--the material request ID allows us to refer to a material request very easily in outside xml classes-->
+<!ATTLIST materialRequest id CDATA #REQUIRED>
+<!--The material request entries all have the following elements which give the details of the material request-->
+<!ELEMENT materialRequest (materialRequest.material, materialRequest.patron, materialRequest.issueDate, materialRequest.requestNotes*, materialRequest.requestDate, materialRequest.requestType)>
+<!ELEMENT materialRequest.material (#PCDATA)>
+<!--the material ID allows us to refer to a material  very easily outside the material xml classes and lets us find info on the given material easily-->
+<!ATTLIST materialRequest.material id CDATA #REQUIRED>
+<!ELEMENT materialRequest.patron (#PCDATA)>
+<!--the patron ID allows us to refer to a patron very easily in outside xml classes-->
+<!ATTLIST materialRequest.patron id CDATA #REQUIRED>
+<!ELEMENT materialRequest.issueDate (#PCDATA)>
+<!--Special notes about the order from the patron-->
+<!ELEMENT materialRequest.requestNotes (#PCDATA)>
+<!ELEMENT materialRequest.requestDate (#PCDATA)>
+<!--Can specify if the request is urgent or not-->
+<!ELEMENT materialRequest.requestType (#PCDATA)>
+]>
+<materialRequests>
+	   
+	<materialRequest id = "001">
+        <materialRequest.material id="004">Big Map of Ireland</materialRequest.material>
+        <materialRequest.patron id="002">Colman</materialRequest.patron>
+        <materialRequest.issueDate>2017-12-06</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>2017-12-06</materialRequest.requestDate>
+        <materialRequest.requestType>NORMAL</materialRequest.requestType>
+    </materialRequest>
+
+
+    <materialRequest id = "002">
+        <materialRequest.material id="001">Book of Colman</materialRequest.material>
+        <materialRequest.patron id="002">Jack Donal Collins</materialRequest.patron>
+        <materialRequest.issueDate>2017-12-06</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>2017-12-06</materialRequest.requestDate>
+        <materialRequest.requestType>URGENT</materialRequest.requestType>
+    </materialRequest>
+    
+    <materialRequest id = "003">
+        <materialRequest.material id="002">Book A</materialRequest.material>
+        <materialRequest.patron id="002">Jack Donal Collins</materialRequest.patron>
+        <materialRequest.issueDate>2017-12-06</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>2017-12-06</materialRequest.requestDate>
+        <materialRequest.requestType>NORMAL</materialRequest.requestType>
+    </materialRequest>
+    
+    <materialRequest id = "004">
+        <materialRequest.material id="010">Book C</materialRequest.material>
+        <materialRequest.patron id="002">Jack Donal Collins</materialRequest.patron>
+        <materialRequest.issueDate>2017-12-06</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>2017-12-06</materialRequest.requestDate>
+        <materialRequest.requestType>NORMAL</materialRequest.requestType>
+    </materialRequest>
+    
+	<materialRequest id = "005">
+        <materialRequest.material id="011">Book D</materialRequest.material>
+        <materialRequest.patron id="002">Jack Donal Collins</materialRequest.patron>
+        <materialRequest.issueDate>2017-12-06</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>2017-12-06</materialRequest.requestDate>
+        <materialRequest.requestType>NORMAL</materialRequest.requestType>
+    </materialRequest>
+    
+    <materialRequest id = "006">
+        <materialRequest.material id="012">Book E</materialRequest.material>
+        <materialRequest.patron id="001">Colman Kinane</materialRequest.patron>
+        <materialRequest.issueDate>2017-12-06</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>2017-12-06</materialRequest.requestDate>
+        <materialRequest.requestType>NORMAL</materialRequest.requestType>
+    </materialRequest>
+    
+    <materialRequest id = "007">
+        <materialRequest.material id="012">Book E</materialRequest.material>
+        <materialRequest.patron id="002">Jack Collins</materialRequest.patron>
+        <materialRequest.issueDate>2017-12-06</materialRequest.issueDate>
+        <materialRequest.requestNotes>N/A</materialRequest.requestNotes>
+        <materialRequest.requestDate>2017-12-06</materialRequest.requestDate>
+        <materialRequest.requestType>NORMAL</materialRequest.requestType>
+    </materialRequest>
+</materialRequests>

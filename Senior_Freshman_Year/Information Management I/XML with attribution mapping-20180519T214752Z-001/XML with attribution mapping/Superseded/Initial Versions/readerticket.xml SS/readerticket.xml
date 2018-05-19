@@ -1,0 +1,36 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE readerTickets [
+<!ELEMENT readerTickets (readerTicket+)>
+<!ATTLIST readerTicket id CDATA #REQUIRED>
+<!ELEMENT readerTicket (readerTicket.name, readerTicket.dateOfBirth, readerTicket.photographicID, readerTicket.issueDate, readerTicket.expiryDate, readerTicket.address*)>
+
+<!ELEMENT readerTicket.name (readerTicket.title, readerTicket.firstName,readerTicket.surname)>
+<!ENTITY mr "MR.">
+<!ENTITY ms "MS.">
+<!ELEMENT readerTicket.title ( #PCDATA | mr | ms )*>
+<!ELEMENT readerTicket.firstName (#PCDATA)>
+<!ELEMENT readerTicket.surname (#PCDATA)>
+
+
+<!ELEMENT readerTicket.dateOfBirth (#PCDATA)>
+
+<!ELEMENT readerTicket.photographicID (#PCDATA)>
+<!ELEMENT readerTicket.issueDate (#PCDATA)>
+<!ELEMENT readerTicket.expiryDate (#PCDATA)>
+<!ELEMENT readerTicket.address (#PCDATA)>
+]>
+<readerTickets>
+    <readerTicket id = "001">
+        <readerTicket.name>
+			<readerTicket.title>&mr;</readerTicket.title>
+			<readerTicket.firstName>Colman</readerTicket.firstName>
+			<readerTicket.surname>Kinane</readerTicket.surname>
+		</readerTicket.name>
+        <readerTicket.dateOfBirth>19/07/1997</readerTicket.dateOfBirth>
+        <readerTicket.photographicID>https://scontent-dub4-1.xx.fbcdn.net/v/t1.0-9/21034168_1385507938212903_6689253821653314997_n.jpg?oh=b7f0e03fc0c114d7829cd315a2e4fa52&amp;oe=5ACEBC6B</readerTicket.photographicID>
+        <readerTicket.issueDate>06/12/2017</readerTicket.issueDate>
+        <readerTicket.expiryDate>06/12/2020</readerTicket.expiryDate>
+        <readerTicket.address>15 Carysfort Woods, Blackrock, Co. Dublin</readerTicket.address>
+    </readerTicket>
+</readerTickets>
+

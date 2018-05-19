@@ -1,0 +1,16 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE materialRequests [
+<!ELEMENT materialRequests (materialRequest+)>
+<!ATTLIST materialRequest id CDATA #REQUIRED>
+<!ELEMENT materialRequest (materialRequest.medium, materialRequest.patronReaderTicketID, materialRequest.issueDate*)>
+<!ELEMENT materialRequest.medium (#PCDATA)>
+<!ELEMENT materialRequest.patronReaderTicketID (#PCDATA)>
+<!ELEMENT materialRequest.issueDate (#PCDATA)>
+]>
+<materialRequests>
+    <materialRequest id = "001">
+        <materialRequest.medium>book</materialRequest.medium>
+        <materialRequest.patronReaderTicketID>002</materialRequest.patronReaderTicketID>
+        <materialRequest.issueDate>06/12/2017</materialRequest.issueDate>
+    </materialRequest>
+</materialRequests>

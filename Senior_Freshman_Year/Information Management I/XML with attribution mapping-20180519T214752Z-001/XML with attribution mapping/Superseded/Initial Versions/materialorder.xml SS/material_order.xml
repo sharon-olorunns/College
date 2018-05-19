@@ -1,0 +1,40 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE materialOrders [
+<!ELEMENT materialOrders (materialOrder+)>
+<!ATTLIST materialOrder id CDATA #REQUIRED>
+<!ELEMENT materialOrder (materialOrder.requestID, materialOrder.MaterialID, materialOrder.orderNotes, materialOrder.assignedTo, materialOrder.fillTime, materialOrder.orderExpiryTime, materialOrder.location*)>
+<!ELEMENT materialOrder.orderID (#PCDATA)>
+<!ELEMENT materialOrder.bookingRef (#PCDATA)>
+<!ELEMENT materialOrder.orderNotes (#PCDATA)>
+<!ELEMENT materialOrder.assignedTo (#PCDATA)>
+<!ELEMENT materialOrder.fillTime (#PCDATA)>
+<!ELEMENT materialOrder.orderExpiryTime (#PCDATA)>
+<!ELEMENT materialOrder.location (#PCDATA)>
+]>
+
+<materialOrders>
+    <materialOrder id="001">
+        <materialOrder.requestID>123-001</materialOrder.requestID>
+        <materialOrder.MaterialID>003</materialOrder.MaterialID>
+        <materialOrder.orderNotes>To be delivered to Eileen</materialOrder.orderNotes>
+		<!--specifically asked to give material to eileen-->
+        <materialOrder.assignedTo>Eileen</materialOrder.assignedTo>
+		<!--eileen is the specific libraran to which the book is to be given as specified in the order-->
+        <materialOrder.fillTime>05/12/2017</materialOrder.fillTime>
+        <materialOrder.orderExpiryTime>12/12/2017</materialOrder.orderExpiryTime>
+        <materialOrder.location>Reading room 3</materialOrder.location>
+    </materialOrder>
+	
+	<materialOrder id="002">
+        <materialOrder.requestID>123-002</materialOrder.requestID>
+        <materialOrder.MaterialID>003</materialOrder.MaterialID>
+        <materialOrder.orderNotes>Dleiver with order id 004</materialOrder.orderNotes>
+		<!--specifically asked to give material to eileen-->
+        <materialOrder.assignedTo>Gwyneth</materialOrder.assignedTo>
+		<!--eileen is the specific libraran to which the book is to be given as specified in the order-->
+        <materialOrder.fillTime>07/12/2017</materialOrder.fillTime>
+        <materialOrder.orderExpiryTime>14/12/2017</materialOrder.orderExpiryTime>
+        <materialOrder.location>Reading room 1</materialOrder.location>
+    </materialOrder>
+</materialOrders>
+

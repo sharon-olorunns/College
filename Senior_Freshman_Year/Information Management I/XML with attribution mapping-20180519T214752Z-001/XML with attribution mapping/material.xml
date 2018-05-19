@@ -1,0 +1,239 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Start DOC TYPE DECLARATION-->
+<!DOCTYPE materials [
+<!ELEMENT materials (material*)>
+<!--the material ID allows us to refer to a material very easily in outside xml classes-->
+<!ATTLIST material id CDATA #REQUIRED>
+<!--Permission level of a reader required to view this material-->
+<!ATTLIST material permLevel CDATA #REQUIRED>
+<!--The various mediums of material available in the library-->
+<!ENTITY BOOK "BOOK">
+<!ENTITY NEWSPAPER "NEWSPAPER">
+<!ENTITY MAP "MAP">
+<!ENTITY JOURNAL "JOURNAL">
+<!ENTITY MUSIC "MUSIC">
+<!ENTITY MANUSCRIPT "MANUSCRIPT">
+<!ATTLIST material type  (BOOK | NEWSPAPER | MAP | JOURNAL | MANUSCRIPT | MUSIC ) #REQUIRED>
+<!--The status of the material at a point in time-->
+<!ENTITY IN_USE "IN_USE">
+<!ENTITY RETURNED "RETURNED">
+<!ENTITY BOOKED "BOOKED">
+<!--A list of elements that describes all material-->
+<!ELEMENT material (material.itemName,material.description,material.addInformation, material.itemSource,material.itemAvailable,material.orderHistory*,map?,newspaper?,book?, journal?, newspaper?,manuscript?,musicalscore?)>
+<!ELEMENT material.itemName   (#PCDATA)>
+<!ELEMENT material.description   (#PCDATA)>
+<!ELEMENT material.addInformation  (#PCDATA)>
+<!ELEMENT material.itemSource  (#PCDATA)>	
+<!ELEMENT material.itemAvailable  (#PCDATA)>	
+<!ELEMENT material.orderHistory  (material.orderHistory.order*)>	
+<!ATTLIST material.orderHistory.order id CDATA #REQUIRED>
+<!ELEMENT material.orderHistory.order (#PCDATA| BOOKED | IN_USE | RETURNED)*>
+
+<!--close the DOCTYPE declaration-->
+<!--More specific elements and attributes particular to a certain type of material eg cartographer for a map and editor for a newspaper--> 
+<!--Map-->
+<!ELEMENT map  (map.cartographer,map.organisation)>
+<!ATTLIST map mapArea CDATA #REQUIRED>
+<!ATTLIST map originDate CDATA #REQUIRED>
+<!ELEMENT map.cartographer  (#PCDATA)>	
+<!ELEMENT map.organisation  (#PCDATA)>
+
+<!--Newspaper-->
+<!ELEMENT newspaper (newspaper.editor,newspaper.publisher,newspaper.title)>
+<!ATTLIST newspaper pubDate CDATA #REQUIRED>
+<!ATTLIST newspaper lang CDATA #REQUIRED>
+<!ATTLIST newspaper edition CDATA #REQUIRED>
+<!ELEMENT newspaper.editor  (#PCDATA)>	
+<!ELEMENT newspaper.publisher  (#PCDATA)>
+<!ELEMENT newspaper.title  (#PCDATA)>
+
+<!--Book-->
+<!ATTLIST book ISBN CDATA #REQUIRED>
+<!ATTLIST book genre CDATA #REQUIRED>
+<!ATTLIST book lang CDATA #REQUIRED>
+<!ELEMENT book  (book.author,book.title)>
+<!ELEMENT book.author  (#PCDATA)>
+<!ELEMENT book.title  (#PCDATA)>
+
+
+<!--Journal-->
+<!ELEMENT journal  (journal.title,journal.editor,journal.article*,journal.dateOfPublication)>
+<!ATTLIST journal lang CDATA #REQUIRED>
+<!ATTLIST journal vol CDATA #REQUIRED>
+<!ELEMENT journal.title  (#PCDATA)>
+<!ELEMENT journal.editor  (#PCDATA)>
+<!ELEMENT journal.article  (#PCDATA)>
+<!ELEMENT journal.dateOfPublication  (#PCDATA)>
+
+<!--Manuscript-->
+<!ELEMENT manuscript  (manuscript.origin,manuscript.status,manuscript.title)>
+<!ATTLIST manuscript lang CDATA #REQUIRED>
+<!ELEMENT manuscript.origin  (#PCDATA)>
+<!ELEMENT manuscript.title  (#PCDATA)>
+<!ELEMENT manuscript.status  (#PCDATA)>
+
+<!--Musical Score-->
+<!ELEMENT musicalscore  (musicalscore.title,musicalscore.organisation)>
+<!ATTLIST musicalscore composer CDATA #REQUIRED>
+<!ATTLIST musicalscore compositionDate CDATA #REQUIRED>
+<!ELEMENT musicalscore.title  (#PCDATA)>
+<!ELEMENT musicalscore.organisation  (#PCDATA)>
+
+]>
+
+<materials>
+	<material id="002" type ="&BOOK;" permLevel="1">
+		<material.itemName>Colman's Book</material.itemName>
+		<material.description>A Book By Colman</material.description>
+		<material.addInformation>Somewhere in a galaxy far far away</material.addInformation>
+		<material.itemSource>Donation by the Kinanes"</material.itemSource>
+		<material.itemAvailable>false</material.itemAvailable>
+		<material.orderHistory>
+			<material.orderHistory.order id="001">&BOOKED;</material.orderHistory.order>
+		</material.orderHistory>
+		<book ISBN ="9928957895752" genre="horror" lang="eng">
+			<book.author>Colman Kinane</book.author>
+			<book.title>The Adventures of Colman : The last Dorito Lover</book.title>
+		</book>
+	</material>
+	
+	<material id="003" type ="&BOOK;" permLevel="2">
+		<material.itemName>Book A</material.itemName>
+		<material.description>Magic Mike</material.description>
+		<material.addInformation>Some Desc</material.addInformation>
+		<material.itemSource>Donation</material.itemSource>
+		<material.itemAvailable>false</material.itemAvailable>
+		<material.orderHistory>
+			<material.orderHistory.order id="002">&BOOKED;</material.orderHistory.order>
+		</material.orderHistory> 
+		<book ISBN ="992895785225252" genre="fiction" lang="eng">
+			<book.author>Author A</book.author>
+			<book.title>Book A, The Tale of A</book.title>
+		</book>
+	</material>
+	
+	<material id="004" type ="&MAP;" permLevel="1">
+		<material.itemName>Map Of Ireland</material.itemName>
+		<material.description>Big Map of Ireland</material.description>
+		<material.addInformation>Some Info</material.addInformation>
+		<material.itemSource>Donation</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<map mapArea="Ireland" originDate="11/1/2008">
+			<map.cartographer>Philip Hughes</map.cartographer>
+			<map.organisation>Ordance Survey Society of Ireland</map.organisation>
+		</map>
+		
+	</material>
+	
+	<material id="005" type ="&JOURNAL;" permLevel="1">
+		<material.itemName>Harvard Medical Journal Spring '17</material.itemName>
+		<material.description>Harvard Medical Journal</material.description>
+		<material.addInformation>Legal Deposit</material.addInformation>
+		<material.itemSource>Donation</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<journal vol="99" lang="eng">
+			<journal.title>Harvard Medical Journal</journal.title>
+			<journal.editor>Sir John Fox</journal.editor>
+			<journal.dateOfPublication>11/11/1997</journal.dateOfPublication>
+		</journal>
+	</material>
+	
+	<material id="006" type ="&MUSIC;" permLevel="1">
+		<material.itemName>Mozart's 5th</material.itemName>
+		<material.description>5th Symphony</material.description>
+		<material.addInformation>N/A</material.addInformation>
+		<material.itemSource>Donation</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<musicalscore composer="Mozart" compositionDate="1770">
+			<musicalscore.title>5th Symphony</musicalscore.title>
+			<musicalscore.organisation>Not Affiliated</musicalscore.organisation>
+		</musicalscore>
+	</material>
+
+	<material id="007" type ="&NEWSPAPER;" permLevel="1">
+		<material.itemName>The Irish Times</material.itemName>
+		<material.description>Ireland's National Newspaper</material.description>
+		<material.addInformation>Price 2 Euro</material.addInformation>
+		<material.itemSource>Legal Deposit</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<newspaper pubDate="10/07/2008"  edition="Morning" lang="eng">
+			<newspaper.editor>Martin Richards</newspaper.editor>
+			<newspaper.publisher>The Irish Times Corp</newspaper.publisher>
+			<newspaper.title>Ireland The Happiest Country in the World</newspaper.title>
+		</newspaper>
+	</material>
+	<material id="008" type ="&NEWSPAPER;" permLevel="1">
+		<material.itemName>The Script of Eldor</material.itemName>
+		<material.description>The Most ancient script in the world</material.description>
+		<material.addInformation>Price 2 Euro</material.addInformation>
+		<material.itemSource>Donation</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<manuscript lang="eng">
+			<manuscript.origin>Someone in the Arabian Deserts</manuscript.origin>
+			<manuscript.status>Poor Condition</manuscript.status>
+			<manuscript.title>Eldors Script</manuscript.title>
+		</manuscript>
+	</material>
+	
+	<material id="009" type ="&BOOK;" permLevel="1">
+		<material.itemName>Book B</material.itemName>
+		<material.description>Magic Jack</material.description>
+		<material.addInformation>Some Desc</material.addInformation>
+		<material.itemSource>Library Deposit</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<book ISBN ="99289552256252" genre="fiction" lang="eng">
+			<book.author>Author B</book.author>
+			<book.title>Book B, The Tale of B</book.title>
+		</book>
+	</material>
+	
+	<material id="010" type ="&BOOK;" permLevel="1">
+		<material.itemName>Book C</material.itemName>
+		<material.description>Some Descr</material.description>
+		<material.addInformation>Signed Book</material.addInformation>
+		<material.itemSource>Library Deposit</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<book ISBN ="992895522413" genre="fiction" lang="eng">
+			<book.author>Author B</book.author>
+			<book.title>Book B, The Tale of B</book.title>
+		</book>
+	</material>
+	
+		<material id="011" type ="&BOOK;" permLevel="1">
+		<material.itemName>Book D</material.itemName>
+		<material.description>Some Descr</material.description>
+		<material.addInformation>Signed Book</material.addInformation>
+		<material.itemSource>Library Deposit</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<book ISBN ="9928924525214" genre="fiction" lang="eng">
+			<book.author>Author D</book.author>
+			<book.title>Book D, The Tale of D</book.title>
+		</book>
+	</material>
+	
+		<material id="012" type ="&BOOK;" permLevel="1">
+		<material.itemName>Book E</material.itemName>
+		<material.description>Some Descr</material.description>
+		<material.addInformation>Signed Book</material.addInformation>
+		<material.itemSource>Library Deposit</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<book ISBN ="992895522452869" genre="fiction" lang="eng">
+			<book.author>Author E</book.author>
+			<book.title>Book E, The Tale of E</book.title>
+		</book>
+	</material>
+	
+		<material id="013" type ="&BOOK;" permLevel="1">
+		<material.itemName>Book F</material.itemName>
+		<material.description>Some Descr</material.description>
+		<material.addInformation>Signed Book</material.addInformation>
+		<material.itemSource>Library Deposit</material.itemSource>
+		<material.itemAvailable>true</material.itemAvailable>
+		<book ISBN ="9928955224523624" genre="fiction" lang="eng">
+			<book.author>Author B</book.author>
+			<book.title>Book B, The Tale of B</book.title>
+		</book>
+	</material>
+	
+</materials>

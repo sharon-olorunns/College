@@ -1,0 +1,56 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE consultationBookings [
+<!ELEMENT consultationBookings (consultationBooking+)>
+<!--The id attribute allows us to easily differentiate between the consulatation bookings especiialy in other xml classes-->
+<!ATTLIST consultationBooking id CDATA #REQUIRED>
+<!--The occurances are all singular except for material which is not required and can be more than one also hence the *. The others can only ever be singular.-->
+<!ELEMENT lconsultationBooking (consultationBooking.location, consultationBooking.consultant,  consultationBooking.requester, consultationBooking.material*)>
+<!ELEMENT consultationBooking.location (#PCDATA)>
+<!--the location ID allows us to refer to a location very easily in this an outside xml class and is a required field for a consultation as it needs to be held in the library-->
+<!ATTLIST consultationBooking.location locID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.consultant (#PCDATA)>
+<!--the consultant ID allows us to refer to an individal consultant very easily in this xml class and is required for a consulatation-->
+<!ATTLIST consultationBooking.consultant consultantID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.material (#PCDATA)>
+<!--the material ID allows us to refer to an individual material  very easily in this class-->
+<!ATTLIST consultationBooking.material materialID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.requester (#PCDATA)>
+<!--the ticket ID allows us to refer to a patron and locate their profile easily in this xml class-->
+<!ATTLIST consultationBooking.requester ticketID CDATA #REQUIRED>
+<!ELEMENT consultationBooking.notes (#PCDATA)>
+<!ELEMENT consultationBooking.time (#PCDATA)>
+<!--This shows the time at which the booking has been made for and the timezone just to be clear for people booking theur consultation from outside the country-->
+<!ATTLIST consultationBooking.time zone CDATA #REQUIRED>
+
+]>
+
+<consultationBookings>
+    <consultationBooking id="001">
+       <consultationBooking.location locID="003">Reading Room 3</consultationBooking.location>
+	   <consultationBooking.consultant consultantID="002">Gwyneth</consultationBooking.consultant>
+	   <consultationBooking.requester ticketID="001">Colman Kinane</consultationBooking.requester>
+	   <consultationBooking.material materialID="001">The Book of Colman</consultationBooking.material>
+	   <consulatationBooking.notes>Requires help understanding the text</consulatationBooking.notes>
+	   <consultationBooking.time zone="UTC +0">15:00 2017-12-30</consultationBooking.time>
+	</consultationBooking>
+	
+	<consultationBooking id="002">
+       <consultationBooking.location locID="003">Reading Room 3</consultationBooking.location>
+	   <consultationBooking.consultant consultantID="001">Eileen</consultationBooking.consultant>
+	   <consultationBooking.requester ticketID="002">Jack Donal Collins</consultationBooking.requester>
+	   <consultationBooking.material materialID="002">Book A</consultationBooking.material>
+	   <consulatationBooking.notes>Problem with book text</consulatationBooking.notes>
+	   <consultationBooking.time zone="UTC +0">15:00 2017-12-23</consultationBooking.time>
+	</consultationBooking>
+	
+	    <consultationBooking id="003">
+       <consultationBooking.location locID="003">Reading Room 3</consultationBooking.location>
+	   <consultationBooking.consultant consultantID="002">Gwyneth</consultationBooking.consultant>
+	   <consultationBooking.requester ticketID="003">Sharon Olorunniwo</consultationBooking.requester>
+	   <consultationBooking.material materialID="001">The Book of Colman</consultationBooking.material>
+	   <consulatationBooking.notes>Text dicussion</consulatationBooking.notes>
+	   <consultationBooking.time zone="UTC +0">15:00 2017-12-30</consultationBooking.time>
+	</consultationBooking>
+	
+</consultationBookings>
+

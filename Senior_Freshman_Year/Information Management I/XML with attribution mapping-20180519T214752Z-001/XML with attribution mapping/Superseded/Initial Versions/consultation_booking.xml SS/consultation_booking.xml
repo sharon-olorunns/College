@@ -1,0 +1,30 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE consultationBookings [
+<!ELEMENT consultationBookings (consultationBooking+)>
+<!ATTLIST consultationBooking id CDATA #REQUIRED>
+<!ELEMENT lconsultationBooking (consultationBooking.location, consultationBooking.consultantName, consultationBooking.patronName, consultationBooking.consultantID, consultationBooking.readerTicketID, consultationBooking.materialID*)>
+<!ELEMENT consultationBooking.location (#PCDATA)>
+<!ELEMENT consultationBooking.consultantName (#PCDATA)>
+<!ELEMENT consultationBooking.consultantID (#PCDATA)>
+<!ELEMENT consultationBooking.materialID (#PCDATA)>
+
+]>
+
+<consultationBookings>
+    <consultationBooking id="001">
+       <consultationBooking.location>Reading Room 3</consultationBooking.location>
+	   <consultationBooking.consultantName>Gwyneth</consultationBooking.consultantName>
+	   <consultationBooking.patronName>Colman Kinane</consultationBooking.patronName>
+	   <consultationBooking.consultantID>002</consultationBooking.consultantID>
+	   <consultationBooking.readerTicketID>001</consultationBooking.readerTicketID>
+	</consultationBooking>
+	
+	<consultationBooking id="002">
+       <consultationBooking.location>Reading Room 1</consultationBooking.location>
+	   <consultationBooking.consultantName>Eileen</consultationBooking.consultantName>
+	   <consultationBooking.patronName>Jack Collins</consultationBooking.patronName>
+	   <consultationBooking.consultantID>001</consultationBooking.consultantID>
+	   <consultationBooking.readerTicketID>002</consultationBooking.readerTicketID>
+	</consultationBooking>
+</consultationBookings>
+
