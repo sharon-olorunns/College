@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>End Occupation - Palestine</title>
+    <meta name="description" content="End Occupation - Palestine">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <title>Video Player</title>
+
+    <style type="text/css">
+
+
+     .video-player{
+     	margin: 200px;
+      text-align: center;
+     }
+     .modal-content iframe{
+     margin: 0 auto;
+     display: block;
+     text-align: center;
+     }
+    </style>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+     /* Get iframe src attribute value i.e. YouTube video url
+     and store it in a variable */
+     var url = $("#video").attr('src');
+
+     /* Assign empty url value to the iframe src attribute when
+     modal hide, which stop the video playing */
+     $("#popup").on('hide.video.modal', function(){
+     $("#video").attr('src', '');
+     });
+
+     /* Assign the initially stored url back to the iframe src
+     attribute when modal is displayed again */
+     $("#popup").on('show.video.modal', function(){
+     $("#video").attr('src', url);
+     });
+    });
+    </script>
+
+  </head>
+
+
+
+  <body>
+
+    <!-- Fixed navbar -->
+
+
+    <nav class="navbar navbar-default navbar-fixed-top probootstrap-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" title="uiCookies:FineOak">FineOak</a>
+        </div>
+
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">The History</a></li>
+            <li><a href="gallery.html">Real Life, Real People</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="flexslider">
+      <ul class="slides">
+        <li style="background-image: url(img/imageedit_39_2915346898.jpg)" class="overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <div class="probootstrap-slider-text text-center">
+                  <h1 color="#2ea2c8" class="probootstrap-heading probootstrap-animate" >#End_the_Occupation</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li style="background-image: url(img/slider_2.jpg)" class="overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <div class="probootstrap-slider-text text-center">
+                  <h1 class="probootstrap-heading probootstrap-animate">End Occupation - Palestine</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </li>
+        <li style="background-image: url(img/imageedit_41_8158962838.jpg)" class="overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <div class="probootstrap-slider-text text-center">
+                  <h1 class="probootstrap-heading probootstrap-animate">End Occupation - Palestine</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="probootstrap-section probootstrap-bg-white">
+      <div class="container">
+        <div class="row">
+            <h2 class="mb0" align="center"><font size="30">#End_the_Occupation</h2></font>
+          </div>
+          <p><font size="4">In the last 50 years years Israel has continued systematic rights abuses of the people of Palestine.
+            Occupation of the West Bank and Gaza has violated war laws and human rights, resulting in many deaths of thousands of Palestinians and even more in severe pain.</p></font>
+            <p><font size="4">This Zionist occupation territory has continued to grow, pushing the Palestines into smaller and
+              smaller territories, turning the West Bank and Gaza into open air prisons. Israel continues to restrict the access to Hospitals, Airports, and resources.</p></font>
+            <p><font size="4">Our goal is to show you the various violations of human rights and the history behind them. We also paln to show the public what life is like
+              in Palestine to help gain understanding of the people that have been relentlessly attacked.</p></font>
+          </div>
+    </section>
+
+
+    <div class="video-player" background="img/imageedit_41_8158962838.jpg">
+<!-- Button HTML (to Trigger Popup) -->
+<a href="#popup" class="btn btn-lg btn-primary" data-toggle="modal" style="font-size:20pt">Play video</a>
+<!-- Popup HTML -->
+<div id="popup" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+<h4 class="modal-title" align="center">The Israel-Gaza Crisis</h4>
+</div>
+<div class="modal-body">
+<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/sZAneAxW7j0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+    <section class="probootstrap-section probootstrap-bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+            <h2>Violations of Human Rights in Palestine</h2>
+          </div>
+        </div>
+        <!-- END row -->
+        <div class="row">
+
+            <div class="probootstrap-service-2 probootstrap-animate">
+              <div class="image">
+                <div class="image-bg">
+                  <img src="img/imageedit_82_6665806911.jpg" height="140" width="200">
+                </div>
+              </div>
+              <div class="text">
+                <h3><a href="life.html">Right to Live</a></h3>
+              </div>
+            </div>
+
+            <div class="probootstrap-service-2 probootstrap-animate">
+              <div class="image">
+                <div class="image-bg">
+                  <img src="img/imageedit_88_4614275213.jpg" height="140" width="200">
+                </div>
+              </div>
+              <div class="text">
+                <h3><a href="prison.html">Imprisonment</a></h3>
+              </div>
+            </div>
+
+
+            <div class="probootstrap-service-2 probootstrap-animate">
+              <div class="image">
+                <div class="image-bg">
+                  <img src="img/imageedit_84_8061204675.jpg" height="140" width="200">
+                </div>
+              </div>
+              <div class="text">
+                <h3><a href="travel.html">Right to Travel</a></h3>
+              </div>
+            </div>
+
+      </div>
+    </section>
+
+
+
+    <footer class="probootstrap-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+              <ul class="probootstrap-footer-social">
+                <li><a href="https://www.facebook.com/End-the-Occupation-207635380010373/?ref=aymt_homepage_panel"><i class="icon-facebook" style="font-size:60px;"></i></a></li>
+              </ul>
+          </div>
+        </div>
+        <!-- END row -->
+        <div class="row">
+          <div class="col-md-12 copyright text-center">
+            <p>&copy; 2018 <a href="https://uicookies.com/">uiCookies:FineOak</a>. All Rights Reserved. <br> Designed &amp; Developed by Sharon Olorunniwo</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="js/scripts.min.js"></script>
+    <script src="js/custom.min.js"></script>
+
+  </body>
+</html>
