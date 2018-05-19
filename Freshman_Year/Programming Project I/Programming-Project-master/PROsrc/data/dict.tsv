@@ -1,0 +1,11 @@
+PRICE	int
+DATE_OF_SALE	String
+POSTCODE	String
+PROPERTY_TYPE	String
+OLD_NEW	String
+NUM_NAME	String
+STREET	String
+LOCALITY	String
+TOWN	String
+DISTRICT	String
+COUNTY	String
